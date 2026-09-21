@@ -6,8 +6,8 @@
     <title>Pavithra C - Portfolio</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- CSS stylesheet with cache-busting parameter -->
-    <link rel="stylesheet" href="style.css?v=3">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -17,6 +17,9 @@
         </div>
         <h1>Pavithra C</h1>
         
+        <!-- Animated Subtitle / Typing Text -->
+        <p class="animated-subtitle">I am a <span id="typing-text"></span><span class="cursor">&nbsp;</span></p>
+
         <div class="header-contact">
             <a href="mailto:pavip6723@gmail.com"><i class="fa-solid fa-envelope"></i> pavip6723@gmail.com</a>
             <a href="tel:+918668139344"><i class="fa-solid fa-phone"></i> +91 8668139344</a>
@@ -42,7 +45,7 @@
 
     <div class="container">
         <!-- ABOUT SECTION -->
-        <section id="about" class="active-section">
+        <section id="about" class="active-section reveal">
             <h2>About Me</h2>
             <p>I am Pavithra C, an aspiring software developer with a strong focus on computer vision, deep learning, and interactive web applications. I enjoy converting complex technical concepts into practical, user-friendly digital solutions.</p>
         </section>
@@ -127,26 +130,69 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- UPDATED SCRIPT FOR SCROLL REVEAL & NAV HIGHLIGHTING -->
+    <!-- ANIMATION & INTERACTION SCRIPT -->
     <script>
+        // 1. AUTO-TYPING EFFECT
+        const words = ["Software Developer", "Computer Vision Enthusiast", "Web Application Creator"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const eraseSpeed = 50;
+        const newWordDelay = 1500;
+        const typingElement = document.getElementById("typing-text");
+
+        function typeEffect() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let delta = isDeleting ? eraseSpeed : typingSpeed;
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                delta = newWordDelay;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                delta = 300;
+            }
+
+            setTimeout(typeEffect, delta);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (words.length) setTimeout(typeEffect, 500);
+        });
+
+        // 2. SCROLL REVEAL OBSERVER
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
         const scrollTopBtn = document.getElementById('scrollTopBtn');
 
-        // Scroll Reveal Observer
+        const observerOptions = {
+            threshold: 0.15
+        };
+
         const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('reveal');
                 }
             });
-        }, { threshold: 0.15 });
+        }, observerOptions);
 
         sections.forEach(sec => {
             sectionObserver.observe(sec);
         });
 
-        // Navigation Active Highlight & Scroll Top Visibility
+        // 3. NAVIGATION HIGHLIGHT & SCROLL TOP
         window.addEventListener('scroll', () => {
             let current = '';
 
@@ -177,7 +223,6 @@
             }
         });
 
-        // Smooth Scroll to Top
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
