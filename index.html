@@ -4,134 +4,198 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pavithra C - Portfolio</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-    <div class="container">
+    <header id="header">
         <div class="profile-img-container">
             <img src="profile.png" alt="Pavithra C" class="profile-img">
         </div>
         <h1>Pavithra C</h1>
+        
         <div class="header-contact">
-            📞 +91 8668139344
-            <a href="mailto:pavip6723@gmail.com">✉️ pavip6723@gmail.com</a>
-            <a href="https://www.linkedin.com/in/pavithra-c-1b0777320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
-            <a href="https://github.com/pavi231" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+            <a href="mailto:pavip6723@gmail.com"><i class="fa-solid fa-envelope"></i> pavip6723@gmail.com</a>
+            <a href="tel:+918668139344"><i class="fa-solid fa-phone"></i> +91 8668139344</a>
+            <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/pavi231" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
         </div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#education">Education</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#contact">Contact</a>
+
+        <div class="resume-container">
+            <a href="RESUME.pdf" target="_blank" class="resume-btn">
+                <i class="fa-solid fa-file-arrow-down"></i> View Resume
+            </a>
+        </div>
+
+        <nav id="nav-menu">
+            <a href="#about" class="nav-link active">About</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#achievements" class="nav-link">Achievements</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </nav>
+    </header>
+
+    <div class="container">
+        <!-- ABOUT SECTION -->
+        <section id="about" class="active-section">
+            <h2>About Me</h2>
+            <p>I am Pavithra C, an aspiring software developer with a strong focus on computer vision, deep learning, and interactive web applications. I enjoy converting complex technical concepts into practical, user-friendly digital solutions.</p>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="edu-card">
+                <h3>Bachelor of Computer Applications (BCA)</h3>
+                <p><strong>Institution:</strong> REVA University</p>
+                <p><strong>Score:</strong> CGPA 8.88</p>
+            </div>
+            <div class="edu-card">
+                <h3>2nd PUC</h3>
+                <p><strong>Score:</strong> 96%</p>
+            </div>
+            <div class="edu-card">
+                <h3>SSLC</h3>
+                <p><strong>Score:</strong> 76%</p>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects">
+            <h2>Projects</h2>
+            
+            <div class="project-card">
+                <h3>Helmet Detection System</h3>
+                <p>An automated safety monitoring framework built with YOLOv11 to perform real-time detection of helmet compliance for road safety standard compliance.</p>
+                            </div>
+
+            <div class="project-card">
+                <h3>Suicide Prevention Platform</h3>
+                <p>A web-based platform dedicated to providing accessible mental health support resources, crisis hotline contacts, and community support links.</p>
+                <a href="https://pavi231.github.io/HACKATHON/" class="project-link" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-card">
+                <h3>AI Study Tutor</h3>
+                <p>An interactive, AI-driven educational assistant built using Python and Streamlit to guide students through personalized learning and practice modules.</p>
+                <a href="https://studytutor-iunojthx4ijs4ksjkvxzz3.streamlit.app/" class="project-link" target="_blank">View Project</a>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <li>Python</li>
+                <li>YOLOv11 & Computer Vision</li>
+                <li>Streamlit</li>
+                <li>HTML5 & CSS3</li>
+                <li>JavaScript</li>
+                <li>Git & GitHub</li>
+            </ul>
+        </section>
+
+        <!-- ACHIEVEMENTS SECTION -->
+        <section id="achievements">
+            <h2>Achievements & Certifications</h2>
+            <ul class="achievements-list">
+                <li><strong>3rd Prize:</strong> Hack Horizon Hackathon</li>
+                <li><strong>2nd Prize:</strong> Web Design Competition</li>
+                <li><strong>Recognition:</strong> Honored by Ignite India</li>
+                <li><strong>Events:</strong> Participant in AURA'25 coding & debugging challenges</li>
+                <li><strong>Certifications:</strong> Technical certifications in Python, DBMS, SQL, Generative AI, Java, and Software Testing</li>
+            </ul>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2>Contact Details</h2>
+            <p>If you'd like to connect, discuss collaborations, or inquire about projects, feel free to reach out:</p>
+            <p style="margin-top: 15px;"><i class="fa-solid fa-envelope" style="color:#38bdf8;"></i> <strong>Email:</strong> <a href="mailto:pavip6723@gmail.com" style="color:#38bdf8; text-decoration:none;">pavip6723@gmail.com</a></p>
+            <p><i class="fa-solid fa-phone" style="color:#38bdf8;"></i> <strong>Phone:</strong> +91 8668139344</p>
+            <p><i class="fa-brands fa-github" style="color:#38bdf8;"></i> <strong>GitHub:</strong> <a href="https://github.com/pavi231" target="_blank" style="color:#38bdf8; text-decoration:none;">github.com/pavi231</a></p>
+        </section>
     </div>
-</header>
 
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p>
-            BCA undergraduate with a strong curiosity to explore multiple domains in computer applications, 
-            including programming, web technologies, databases, and emerging technologies. Seeking opportunities 
-            that offer broad learning exposure and practical experience.
-        </p>
-    </section>
+    <!-- BACK TO TOP BUTTON -->
+    <button id="scrollTopBtn" title="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
-    <section id="skills" class="container">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Programming</h3>
-                <p>Python, Java, C, C++</p>
-            </div>
-            <div class="skill-card">
-                <h3>Web Development</h3>
-                <p>HTML, CSS, JavaScript</p>
-            </div>
-            <div class="skill-card">
-                <h3>Databases & Backend</h3>
-                <p>SQL, DBMS, RDBMS, REST APIs</p>
-            </div>
-            <div class="skill-card">
-                <h3>Machine Learning</h3>
-                <p>YOLOv11</p>
-            </div>
-            <div class="skill-card">
-                <h3>Core Concepts</h3>
-                <p>OOPs, Data Structures, Algorithms</p>
-            </div>
-        </div>
-    </section>
+    <!-- FIXED HIGHLIGHT & SCROLL SCRIPT -->
+    <script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
 
-    <section id="projects" class="container">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Helmet Detection System</h3>
-            <p>Developed a YOLOv11-based Python application for real-time helmet detection and alert triggering. Deployed as a standalone desktop application due to real-time camera access requirements.</p>
-        </div>
-        <div class="project-card">
-            <h3>Suicidal Prevention Website</h3>
-            <p>Created a web platform to provide support and resources for mental health awareness.</p>
-            <a href="https://pavi231.github.io/HACKATHON/" target="_blank" rel="noopener noreferrer" class="project-link">🔗 View Live Project</a>
-        </div>
-        <div class="project-card">
-            <h3>Study Tutor (Video)</h3>
-            <p>Built a video-based learning tool to help students study efficiently.</p>
-            <a href="https://studytutor-iunojthx4ijs4ksjkvxzz3.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-link">🚀 Open Streamlit App</a>
-        </div>
-    </section>
+        function activateSection(targetId) {
+            sections.forEach(sec => {
+                if (sec.id === targetId) {
+                    sec.classList.add('active-section');
+                } else {
+                    sec.classList.remove('active-section');
+                }
+            });
 
-    <section id="education" class="container">
-        <h2>Education</h2>
-        <ul>
-            <li>
-                <strong>Bachelor of Computer Applications (BCA)</strong> - Reva University (2024–2027) <br>
-                <span>CGPA: 8.88</span>
-            </li>
-            <li>
-                <strong>2nd PUC (12th Standard - CEBA)</strong> - Reva University (2023–2024) <br>
-                <span>Percentage: 96%</span>
-            </li>
-            <li>
-                <strong>SSLC (10th Standard)</strong> - JGRVK School CBSE (2021–2022) <br>
-                <span>Percentage: 76%</span>
-            </li>
-        </ul>
-    </section>
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${targetId}`) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
 
-    <section id="achievements" class="container">
-        <h2>Certifications & Achievements</h2>
-        <h3>Awards</h3>
-        <ul>
-            <li>3rd Prize - Hack Horizon Hackathon</li>
-            <li>2nd Prize - Web Design (REVA PU)</li>
-            <li>Ignite India Entrepreneurship Recognition</li>
-        </ul>
-        <h3>Certifications</h3>
-        <ul>
-            <li>Python PCAP (Infosys)</li>
-            <li>DBMS & SQL (Infosys)</li>
-            <li>Gen AI (Google Cloud)</li>
-            <li>Data Structures & Backend (Java)</li>
-            <li>Microsoft Fabric SQL</li>
-            <li>HTML/CSS/JS</li>
-            <li>Software Testing</li>
-        </ul>
-    </section>
+        // Improved scroll handler including bottom-of-page detection
+        window.addEventListener('scroll', () => {
+            let current = '';
 
-    <section id="contact" class="container">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:pavip6723@gmail.com">pavip6723@gmail.com</a></p>
-        <p>Phone: +91 8668139344</p>
-        <p>Languages: English, Tamil, Kannada, Hindi</p>
-    </section>
+            // Check if user scrolled to the absolute bottom of the page
+            const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 50);
 
-    <footer>
-        <p>&copy; 2026 Pavithra C. All rights reserved.</p>
-    </footer>
+            if (isAtBottom) {
+                current = 'contact';
+            } else {
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 120;
+                    if (window.scrollY >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+            }
 
+            if (current) {
+                activateSection(current);
+            }
+
+            // Toggle Back to Top Button
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        // Click nav link handler
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href').substring(1);
+                activateSection(targetId);
+            });
+        });
+
+        // Scroll to top button handler
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            activateSection('about');
+        });
+    </script>
 </body>
 </html>
