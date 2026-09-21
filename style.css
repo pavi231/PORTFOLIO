@@ -341,3 +341,71 @@ section.active-section h2 {
         font-size: 1rem;
     }
 }
+/* ==========================================
+   PORTFOLIO ANIMATIONS & EFFECTS
+   ========================================== */
+
+/* 1. Profile Picture Pulse Effect */
+.profile-img-container {
+    animation: profilePulse 3s infinite ease-in-out;
+}
+
+@keyframes profilePulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(56, 189, 248, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+    }
+}
+
+/* 2. Scroll-Driven Entrance Animations (Sections Fade & Slide Up) */
+section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Class added via JavaScript when section scrolls into view */
+section.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Card & Project Hover Animations */
+.project-card, .edu-card {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover, .edu-card:hover {
+    transform: translateY(-50px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.2);
+}
+
+/* 4. Skills Badges Bounce Effect */
+.skills-list li {
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.skills-list li:hover {
+    transform: scale(1.08);
+    background: rgba(56, 189, 248, 0.15);
+}
+
+/* 5. Resume Button Glow Animation */
+.resume-btn {
+    animation: glowPulse 2.5s infinite alternate;
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25);
+    }
+    100% {
+        box-shadow: 0 6px 25px rgba(129, 140, 248, 0.6);
+    }
+}

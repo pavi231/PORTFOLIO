@@ -6,7 +6,8 @@
     <title>Pavithra C - Portfolio</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <!-- CSS stylesheet with cache-busting parameter -->
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -71,7 +72,7 @@
             <div class="project-card">
                 <h3>Helmet Detection System</h3>
                 <p>An automated safety monitoring framework built with YOLOv11 to perform real-time detection of helmet compliance for road safety standard compliance.</p>
-                            </div>
+            </div>
 
             <div class="project-card">
                 <h3>Suicide Prevention Platform</h3>
@@ -126,35 +127,29 @@
         <i class="fa-solid fa-arrow-up"></i>
     </button>
 
-    <!-- FIXED HIGHLIGHT & SCROLL SCRIPT -->
+    <!-- UPDATED SCRIPT FOR SCROLL REVEAL & NAV HIGHLIGHTING -->
     <script>
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
         const scrollTopBtn = document.getElementById('scrollTopBtn');
 
-        function activateSection(targetId) {
-            sections.forEach(sec => {
-                if (sec.id === targetId) {
-                    sec.classList.add('active-section');
-                } else {
-                    sec.classList.remove('active-section');
+        // Scroll Reveal Observer
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
                 }
             });
+        }, { threshold: 0.15 });
 
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') === `#${targetId}`) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
-            });
-        }
+        sections.forEach(sec => {
+            sectionObserver.observe(sec);
+        });
 
-        // Improved scroll handler including bottom-of-page detection
+        // Navigation Active Highlight & Scroll Top Visibility
         window.addEventListener('scroll', () => {
             let current = '';
 
-            // Check if user scrolled to the absolute bottom of the page
             const isAtBottom = (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 50);
 
             if (isAtBottom) {
@@ -168,11 +163,13 @@
                 });
             }
 
-            if (current) {
-                activateSection(current);
-            }
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
 
-            // Toggle Back to Top Button
             if (window.scrollY > 300) {
                 scrollTopBtn.classList.add('show');
             } else {
@@ -180,21 +177,12 @@
             }
         });
 
-        // Click nav link handler
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href').substring(1);
-                activateSection(targetId);
-            });
-        });
-
-        // Scroll to top button handler
+        // Smooth Scroll to Top
         scrollTopBtn.addEventListener('click', () => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
-            activateSection('about');
         });
     </script>
 </body>
